@@ -1,19 +1,36 @@
-# Vue 3 + Typescript + Vite
+# RingScope
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+In order for the FocusRing component to work, it has to be in scope of a _RingScope_ component provider.
 
-## Recommended IDE Setup
+```html
+<RingScope>
+  <FocusRing>
+    <button @click="action">Click on me!</button>
+  </FocusRing>
+</RingScope>
+```
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-FocusRing
+# FocusRing
 
   By default, the element slotted inside FocusRing will be surrounded in a focus indicator when clicked or otherwise focused.
 
-  You HAVE to pass a ref to the target element you want stylized when the component inside FocusRing has dynamic content: either it contains {{ }} or it uses a slot (due to the internal API of Vue, a component can't know the contents of its slot). Use the "target" prop on FocusRing for this.
+  ```html
+  <FocusRing>
+    <button @click="action">Click on me!</button>
+  </FocusRing>
+  ```
 
-  You may also want to use the combination of "target" and "container" props when the focusable element is not the same as the element you want highlighted. Again, simply pass the refs to the respective elements as props.
+  One caveat: you HAVE to pass a ref to the target element you want stylized when the component inside FocusRing has dynamic content: either it contains {{ }} or it uses a slot (due to the internal API of Vue, a component can't know the contents of its slot). Use the _target_ prop on FocusRing for this.
+
+  ```html
+  <FocusRing :ref="buttonRef" >
+    <button ref="buttonRef" @click="action">{{ customText }}</button>
+  </FocusRing>
+
+
+  <FocusRing :ref="magicRef" >
+    <MagicButton ref="magicRef" @click="action">Click on me!</MagicButton>
+  </FocusRing>
+  ```
+
+  You may also want to use the combination of _target_ and _container_ props when the focusable element is not the same as the element you want highlighted. Again, simply pass the refs to the respective elements as props.
