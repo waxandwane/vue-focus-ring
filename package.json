@@ -1,0 +1,44 @@
+{
+  "name": "vue-focus-ring",
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-focus-ring.umd.js",
+  "style": "./dist/style.css",
+  "module": "./dist/vue-focus-ring.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-focus-ring.es.js",
+      "require": "./dist/vue-focus-ring.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "cd dev && vite",
+    "build": "vue-tsc --noEmit && vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@iconify-json/icon-park-outline": "^1.1.1",
+    "@iconify-json/mdi": "^1.1.1",
+    "@types/node": "^16.11.6",
+    "@types/tinycolor2": "^1.4.3",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "@vue/compiler-sfc": "^3.2.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "prettier": "^2.4.0",
+    "sass": "^1.49.9",
+    "typescript": "^4.3.2",
+    "unplugin-icons": "^0.13.2",
+    "vite": "^2.8.6",
+    "vue-tsc": "^0.2.2"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.4.2"
+  }
+}
