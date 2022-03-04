@@ -34,3 +34,13 @@ In order for the FocusRing component to work, it has to be in scope of a _RingSc
   ```
 
   You may also want to use the combination of _target_ and _container_ props when the focusable element is not the same as the element you want highlighted. Again, simply pass the refs to the respective elements as props.
+
+   ```html
+  <FocusRing :target="targetRef" :container="containerRef" >
+    <div ref="containerRef" >
+      <Icon>
+      <input ref="targetRef" v-model="text" />
+      <Icon>
+    </div>
+  </FocusRing>
+  ```
