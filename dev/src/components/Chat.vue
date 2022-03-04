@@ -8,6 +8,12 @@ const messages = [{
 }, {
   author: 'Jeanne',
   text: 'Hello Luc, I\'m fine. How about you?'
+}, {
+  author: 'Luc',
+  text: 'I\'m great! I\'m just back from holidays!'
+}, {
+  author: 'Iris',
+  text: 'Where did you go?'
 }]
 </script>
 
@@ -30,6 +36,8 @@ const messages = [{
 
   #messages {
     margin-bottom: 8px;
+    max-height: 240px;
+    overflow: scroll;
   }
 }
 </style>

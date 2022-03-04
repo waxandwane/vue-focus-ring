@@ -51,18 +51,20 @@ const authorRef = ref()
 
   .avatar {
     background-color: burlywood;
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     border-radius: 24px;
     border: none;
   }
 
   .bubble {
     background-color: white;
-    padding: 4px 8px;
+    padding: 8px 12px;
     border-radius: 24px 24px 0 24px;
     word-wrap: normal;
     max-width: 200px;
+    font-size: 0.9rem;
+    text-align: justify;
   }
 }
 </style>
