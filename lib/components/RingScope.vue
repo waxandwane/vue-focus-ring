@@ -73,10 +73,19 @@ provide<RingScopeListeners>(LISTENERS, readonly({ onBlur, onFocus }));
 
 <template>
   <slot />
-  <div :class="light ? 'light' : 'dark'" v-if="visible" :style="style" />
+  <div class="ring" :class="light ? 'light' : 'dark'" v-if="visible" :style="style" />
 </template>
 
 <style scoped>
+.ring {
+  position: absolute;
+  pointer-events: none;
+  display: block;
+
+  background: none;
+  margin: 0;
+  padding: 0;
+}
 .light {
   box-shadow: 0 0 0 4px rgba(252, 80, 49, 0.8);
 }

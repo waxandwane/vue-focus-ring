@@ -15,7 +15,6 @@ export const getStyle = (dimensions: Dimensions) => {
   const style: CSSProperties = {
     ...dimensions,
     ...inPx,
-    position: "absolute",
   };
 
   return style;
