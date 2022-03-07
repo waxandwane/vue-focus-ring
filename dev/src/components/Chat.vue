@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import ChatBox from './ChatBox.vue';
 import Message from './Message.vue';
+import RingScope from '../../../lib/components/RingScope.vue';
 
 const messages = [{
   author: 'Luc',
@@ -15,12 +17,16 @@ const messages = [{
   author: 'Iris',
   text: 'Where did you go?'
 }]
+
+const containerRef = ref()
 </script>
 
 <template>
   <div id="container">
-    <div id="messages">
-      <Message v-for="message in messages" :author="message.author" :text="message.text" />
+    <div ref="containerRef" id="messages">
+      <RingScope :container="containerRef">
+        <Message v-for="message in messages" :author="message.author" :text="message.text" />
+      </RingScope>
     </div>
     <ChatBox />
   </div>
@@ -37,7 +43,10 @@ const messages = [{
   #messages {
     margin-bottom: 8px;
     max-height: 240px;
-    overflow: scroll;
+    overflow-y: scroll;
+    padding: 4px;
+
+    position: relative;
   }
 }
 </style>
