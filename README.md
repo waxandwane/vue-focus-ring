@@ -10,6 +10,18 @@ In order for the FocusRing component to work, it has to be in scope of a _RingSc
 </RingScope>
 ```
 
+If you want to use focus rings on elements inside a scrollable container, or your container is inside an absolutely positioned element, you will need to create a new RingScope to which you pass a ref to your container. If your focus rings have weird positioning, this may be the trick to fix it.
+
+```html
+<div ref="containerRef">
+  <RingScope :container="containerRef" >
+    <FocusRing v-for="item in items" >
+      <Item :item="item" @click="action"/>
+    </FocusRing>
+  </RingScope>
+</div>
+```
+
 # FocusRing
 
   By default, the element slotted inside FocusRing will be surrounded in a focus indicator when clicked or otherwise focused.
