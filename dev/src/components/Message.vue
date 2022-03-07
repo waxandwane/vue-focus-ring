@@ -13,10 +13,6 @@ const { author, text } = props
 
 const initial = computed(() => author.charAt(0).toUpperCase())
 
-const onFocus = () => {
-  console.log('focus')
-}
-
 const avatarRef = ref()
 const authorRef = ref()
 </script>
@@ -30,7 +26,7 @@ const authorRef = ref()
       <button ref="avatarRef" class="avatar">{{ initial }}</button>
     </FocusRing>
     <div>
-      <p class="bubble" @focus="onFocus">{{ text }}</p>
+      <p class="bubble">{{ text }}</p>
     </div>
   </div>
 </template>
