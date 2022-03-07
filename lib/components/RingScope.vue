@@ -8,18 +8,18 @@ import {
   unref,
   watchEffect,
   Ref,
-} from "vue";
-import type { Dimensions, RingScopeListeners } from "../types";
-import { getStyle, LISTENERS, setPosition, shouldBeLight } from "../utils";
+} from "vue"
+import type { Dimensions, RingScopeListeners } from "../types"
+import { getStyle, LISTENERS, setPosition, shouldBeLight } from "../utils"
 
 interface Props {
-  getRef?: () => Ref<Element>
+  container?: Element
 }
 
 const props = defineProps<Props>()
 
-const root = ref<Element>();
-const visible = ref(false);
+const root = ref<Element>()
+const visible = ref(false)
 const light = ref(true)
 
 const rDims: Dimensions = reactive({
@@ -28,22 +28,22 @@ const rDims: Dimensions = reactive({
   height: 0,
   width: 0,
   borderRadius: "2px",
-});
+})
 
-const style = computed(() => getStyle(rDims));
+const style = computed(() => getStyle(rDims))
 
 watchEffect(
   () => {
-    if (props.getRef) {
-      root.value = unref(props.getRef());
+    if (props.container) {
+      root.value = props.container
     } else {
-      root.value = document.body;
+      root.value = document.body
     }
   },
   {
     flush: "post",
   }
-);
+)
 
 const onFocus = ({
   container,
@@ -57,7 +57,7 @@ const onFocus = ({
     container,
     root as Ref<Element>,
     offset,
-    !props.getRef
+    !props.container
   );
 
   light.value = shouldBeLight(container)
