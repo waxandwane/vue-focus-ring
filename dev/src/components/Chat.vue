@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import ChatBox from './ChatBox.vue';
 import Message from './Message.vue';
-import RingScope from '../../../lib/components/RingScope.vue';
+import { RingScope } from '../../../lib';
 
 const messages = [{
   author: 'Luc',
