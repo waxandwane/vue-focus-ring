@@ -35,12 +35,11 @@ If you want to use focus rings on elements inside a scrollable container, or you
   One caveat: you HAVE to pass a ref to the target element you want stylized when the component inside FocusRing has dynamic content: either it contains {{ }} or it uses a slot (due to the internal API of Vue, a component can't know the contents of its slot). Use the _target_ prop on FocusRing for this.
 
   ```html
-  <FocusRing :ref="buttonRef" >
+  <FocusRing :target="buttonRef" >
     <button ref="buttonRef" @click="action">{{ customText }}</button>
   </FocusRing>
 
-
-  <FocusRing :ref="magicRef" >
+  <FocusRing :target="magicRef" >
     <MagicButton ref="magicRef" @click="action">Click on me!</MagicButton>
   </FocusRing>
   ```
@@ -50,9 +49,9 @@ If you want to use focus rings on elements inside a scrollable container, or you
    ```html
   <FocusRing :target="targetRef" :container="containerRef" >
     <div ref="containerRef" >
-      <Icon>
+      <Icon />
       <input ref="targetRef" v-model="text" />
-      <Icon>
+      <Icon />
     </div>
   </FocusRing>
   ```
