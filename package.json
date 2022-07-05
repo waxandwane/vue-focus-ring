@@ -22,6 +22,7 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@babel/types": "^7.18.7",
     "@iconify-json/icon-park-outline": "^1.1.1",
     "@types/node": "^16.11.6",
     "@types/tinycolor2": "^1.4.3",
