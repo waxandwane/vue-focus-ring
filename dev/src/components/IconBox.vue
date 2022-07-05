@@ -1,13 +1,13 @@
-<script setup lang="ts" >
-import { ref } from 'vue';
-import { FocusRing } from '../../../lib';
+<script setup lang="ts">
+import { ref } from 'vue'
+import { FocusRing } from '../../../lib'
 
 const buttonRef = ref()
 </script>
 
 <script lang="ts">
 export default {
-  inheritAttrs: false
+  inheritAttrs: false,
 }
 </script>
 

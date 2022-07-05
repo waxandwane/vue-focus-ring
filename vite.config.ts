@@ -9,7 +9,7 @@ export default defineConfig({
       name: 'VueFocusRing',
     },
     rollupOptions: {
-      external: ['vue', 'laila'],
+      external: ['vue'],
       output: {
         exports: 'named',
         globals: {

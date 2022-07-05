@@ -19,24 +19,26 @@
     "build": "vue-tsc --noEmit && vite build"
   },
   "peerDependencies": {
-    "vue": "^3.2.31"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@iconify-json/icon-park-outline": "^1.1.1",
-    "@iconify-json/mdi": "^1.1.1",
     "@types/node": "^16.11.6",
     "@types/tinycolor2": "^1.4.3",
-    "@vitejs/plugin-vue": "^2.2.0",
-    "@vue/compiler-sfc": "^3.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/compiler-sfc": "^3.2.37",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^7.17.0",
     "prettier": "^2.4.0",
     "sass": "^1.49.9",
-    "typescript": "^4.3.2",
-    "unplugin-icons": "^0.13.2",
-    "vite": "^2.8.6",
-    "vue-tsc": "^0.2.2"
+    "typescript": "^4.7.4",
+    "unplugin-icons": "^0.14.7",
+    "vite": "^2.9.13",
+    "vite-plugin-eslint": "^1.6.1",
+    "vue-tsc": "^0.38.2"
   },
   "dependencies": {
     "tinycolor2": "^1.4.2"
