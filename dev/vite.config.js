@@ -4,7 +4,11 @@ import Icons from 'unplugin-icons/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), Icons({
-    autoInstall: true
-  })]
+  plugins: [
+    vue(),
+    Icons({
+      autoInstall: true,
+      compiler: 'vue3',
+    }),
+  ],
 })

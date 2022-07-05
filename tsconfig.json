@@ -16,7 +16,8 @@
     "types": [
       "node",
       "vue",
-      "vite/client"
+      "vite/client",
+      "unplugin-icons/types/vue"
     ],
     "outDir": "dist",
     "baseUrl": "./",

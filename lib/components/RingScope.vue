@@ -5,12 +5,11 @@ import {
   reactive,
   readonly,
   ref,
-  unref,
   watchEffect,
   Ref,
-} from "vue"
-import type { Dimensions, RingScopeListeners } from "../types"
-import { getStyle, LISTENERS, setPosition, shouldBeLight } from "../utils"
+} from 'vue'
+import type { Dimensions, RingScopeListeners } from '../types'
+import { getStyle, LISTENERS, setPosition, shouldBeLight } from '../utils'
 
 interface Props {
   container?: Element
@@ -27,7 +26,7 @@ const rDims: Dimensions = reactive({
   left: 0,
   height: 0,
   width: 0,
-  borderRadius: "2px",
+  borderRadius: '2px',
 })
 
 const style = computed(() => getStyle(rDims))
@@ -41,39 +40,38 @@ watchEffect(
     }
   },
   {
-    flush: "post",
-  }
+    flush: 'post',
+  },
 )
 
 const onFocus = ({
   container,
   offset,
 }: {
-  container: Element;
-  offset: number;
+  container: Element
+  offset: number
 }) => {
-  setPosition(
-    rDims,
-    container,
-    root as Ref<Element>,
-    offset,
-    !props.container
-  );
+  setPosition(rDims, container, root as Ref<Element>, offset, !props.container)
 
   light.value = shouldBeLight(container)
-  visible.value = true;
-};
+  visible.value = true
+}
 
 const onBlur = () => {
-  visible.value = false;
-};
+  visible.value = false
+}
 
-provide<RingScopeListeners>(LISTENERS, readonly({ onBlur, onFocus }));
+provide<RingScopeListeners>(LISTENERS, readonly({ onBlur, onFocus }))
 </script>
 
 <template>
   <slot />
-  <div class="ring" :class="light ? 'light' : 'dark'" v-if="visible" :style="style" />
+  <div
+    class="ring"
+    :class="light ? 'light' : 'dark'"
+    v-if="visible"
+    :style="style"
+  />
 </template>
 
 <style scoped>

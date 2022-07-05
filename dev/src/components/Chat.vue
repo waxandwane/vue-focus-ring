@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import ChatBox from './ChatBox.vue';
-import Message from './Message.vue';
-import { RingScope } from '../../../lib';
+import { ref } from 'vue'
+import ChatBox from './ChatBox.vue'
+import Message from './Message.vue'
+import { RingScope } from '../../../lib'
 
-const messages = [{
-  author: 'Luc',
-  text: 'Hi, how are you?'
-}, {
-  author: 'Jeanne',
-  text: 'Hello Luc, I\'m fine. How about you?'
-}, {
-  author: 'Luc',
-  text: 'I\'m great! I\'m just back from holidays!'
-}, {
-  author: 'Iris',
-  text: 'Where did you go?'
-}]
+const messages = [
+  {
+    author: 'Luc',
+    text: 'Hi, how are you?',
+  },
+  {
+    author: 'Jeanne',
+    text: "Hello Luc, I'm fine. How about you?",
+  },
+  {
+    author: 'Luc',
+    text: "I'm great! I'm just back from holidays!",
+  },
+  {
+    author: 'Iris',
+    text: 'Where did you go?',
+  },
+]
 
 const containerRef = ref()
 </script>
@@ -25,7 +30,11 @@ const containerRef = ref()
   <div id="container">
     <div ref="containerRef" id="messages">
       <RingScope :container="containerRef">
-        <Message v-for="message in messages" :author="message.author" :text="message.text" />
+        <Message
+          v-for="message in messages"
+          :author="message.author"
+          :text="message.text"
+        />
       </RingScope>
     </div>
     <ChatBox />

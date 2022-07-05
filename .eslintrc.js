@@ -4,12 +4,12 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-recommended',
     'eslint:recommended',
-    '@vue/typescript',
-    'prettier',
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
-  plugins: ['vue'],
+  plugins: ['vue', '@typescript-eslint'],
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
