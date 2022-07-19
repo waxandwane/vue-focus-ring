@@ -4,35 +4,31 @@ import IconGif from '~icons/icon-park-outline/file-gif'
 import IconAdd from '~icons/icon-park-outline/add-one'
 import IconSticker from '~icons/icon-park-outline/stickers'
 import IconEmoji from '~icons/icon-park-outline/emotion-happy'
-import { FocusRing } from '../../../lib'
-import { ref } from 'vue'
+import { useFocusRing } from '../../../lib'
 
-const containerRef = ref()
-const targetRef = ref()
+const { target, container } = useFocusRing()
 </script>
 
 <template>
-  <FocusRing :target="targetRef" :container="containerRef">
-    <div id="container" ref="containerRef">
-      <span id="before">
-        <IconBox>
-          <IconAdd />
-        </IconBox>
-      </span>
-      <input id="input" ref="targetRef" placeholder="Type a message..." />
-      <span id="after">
-        <IconBox>
-          <IconGif />
-        </IconBox>
-        <IconBox>
-          <IconSticker />
-        </IconBox>
-        <IconBox>
-          <IconEmoji />
-        </IconBox>
-      </span>
-    </div>
-  </FocusRing>
+  <div id="container" ref="container">
+    <span id="before">
+      <IconBox>
+        <IconAdd />
+      </IconBox>
+    </span>
+    <input id="input" ref="target" placeholder="Type a message..." />
+    <span id="after">
+      <IconBox>
+        <IconGif />
+      </IconBox>
+      <IconBox>
+        <IconSticker />
+      </IconBox>
+      <IconBox>
+        <IconEmoji />
+      </IconBox>
+    </span>
+  </div>
 </template>
 
 <style lang="scss" scoped>
