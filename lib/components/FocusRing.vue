@@ -91,9 +91,3 @@ onUnmounted(() => {
 <template>
   <slot />
 </template>
-
-<style scoped>
-:slotted(*):focus {
-  outline: none;
-}
-</style>

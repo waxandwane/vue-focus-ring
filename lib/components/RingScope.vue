@@ -91,3 +91,9 @@ provide<RingScopeListeners>(LISTENERS, readonly({ onBlur, onFocus }))
   box-shadow: 0 0 0 4px rgba(95, 212, 255, 0.8);
 }
 </style>
+
+<style>
+*:focus {
+  outline: none;
+}
+</style>
